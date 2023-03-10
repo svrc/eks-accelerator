@@ -1,7 +1,7 @@
 accelerator:
   displayName: Dynamic Tanzu EKS Cluster
   description: Accelerator to create an EKS cluster for Tanzu App deployment
-  iconUrl: https://raw.githubusercontent.com/eks-accelerator/icons/master/amazonEKS_large.png
+  iconUrl: https://github.com/svrc/eks-accelerator/raw/main/icon/amazonEKS_large.png
   tags:
   - cloud-native-devs
   - eks
