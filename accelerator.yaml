@@ -58,8 +58,8 @@ accelerator:
   - name: nodeCount
     label: Cluster Node Count
     display: true
-    defaultValue: "4"
-
+    defaultValue: 4
+    dataType: number 
   - name: fargateNamespace
     label: EKS Fargate Namespace
     display: true
