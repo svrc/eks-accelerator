@@ -13,7 +13,7 @@ spec:
       provider: native
   parameters:
     version: #@ data.values.kubernetesVersion
-    fargateNamespace: default
+    fargateNamespace: #@ data.values.fargateNamespace
     nodeSize: #@ data.values.nodeSize ### Supported values: small, medium, large
     nodeCount: #@ data.values.nodeCount
     region: #@ data.values.region
