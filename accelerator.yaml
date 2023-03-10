@@ -1,0 +1,75 @@
+accelerator:
+  displayName: Dynamic Tanzu EKS Cluster
+  description: Accelerator to create an EKS cluster for Tanzu App deployment
+  iconUrl: https://raw.githubusercontent.com/eks-accelerator/icons/master/amazonEKS_large.png
+  tags:
+  - cloud-native-devs
+  - eks
+  - dekt-demo
+
+  options:
+  
+  #data services
+  - name: kubernetesVersion
+    label: Kubernetes Version
+    inputType: select
+    display: true
+    defaultValue: 1.24
+    choices:
+    - value: "1.23"    
+      text: "1.23"
+    - value: "1.24"    
+      text: "1.24"
+    - value: "1.25"    
+      text: "1.25"
+  - name: region
+    label: AWS Region
+    inputType: select
+    display: true
+    defaultValue: euw1
+    choices:
+    - value: use1
+      text: us-east-1       # a-f
+    - value: use2
+      text: us-east-2
+    - value: usw1
+      text: us-west-1       # bc
+    - value: usw2
+      text: us-west-2       # a-d
+    - value: euw1 
+      text: eu-west-1
+    - value: euw2
+      text: eu-west-2
+    - value: euw3
+      text: eu-west-3
+    - value: eun
+      text: eu-north-1
+  - name: nodeSize
+    label: AWS Node Size   
+    display: true
+    defaultValue: large
+    choices:
+    - value: small
+      text: t3.small
+    - value: medium
+      text: t3.medium
+    - value: large
+      text: t3.large
+  - name: nodeCount
+    label: Cluster Node Count
+    display: true
+    defaultValue: "4"
+
+  - name: fargateNamespace
+    label: EKS Fargate Namespace
+    display: true
+    defaultValue: default
+                                            
+     
+engine:
+  merge:
+    - includes: [ "cluster.yaml"]
+      chain:
+        - type: YTT
+   
+    

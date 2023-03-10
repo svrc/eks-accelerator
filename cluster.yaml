@@ -1,0 +1,21 @@
+#@ load("@ytt:data", "data") 
+--- 
+apiVersion: xp.tanzu.vmware.com/v1alpha1
+kind: ManagedCluster
+metadata:
+  name: #@ data.values.artifactId
+  namespace: managed
+spec:
+  id: #@ data.values.artifactId
+  compositionSelector:
+    matchLabels:
+      cluster: eks
+      provider: native
+  parameters:
+    version: #@ data.values.kubernetesVersion
+    fargateNamespace: default
+    nodeSize: #@ data.values.nodeSize ### Supported values: small, medium, large
+    nodeCount: #@ data.values.nodeCount
+    region: #@ data.values.region
+  writeConnectionSecretToRef:
+    name: #@ data.values.artifactId
