@@ -14,7 +14,7 @@ accelerator:
     label: Kubernetes Version
     inputType: select
     display: true
-    defaultValue: 1.24
+    defaultValue: "1.24"
     choices:
     - value: "1.23"    
       text: "1.23"
