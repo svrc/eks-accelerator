@@ -15,7 +15,9 @@ spec:
     version: #@ data.values.kubernetesVersion
     fargateNamespace: #@ data.values.fargateNamespace
     nodeSize: #@ data.values.nodeSize
+    subDomain: #@ data.values.subDomain
     nodeCount: #@ data.values.nodeCount
     region: #@ data.values.region
+    registryHost: #@ data.values.registryHost
   writeConnectionSecretToRef:
     name: #@ data.values.artifactId
